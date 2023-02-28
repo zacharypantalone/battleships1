@@ -2,7 +2,7 @@
  const flipButton = document.querySelector('#flip-button')
 
 function flip() {
-  console.log(optionContainer.children)
+  const optionShips = Array.from(optionContainer.children)
 
 }
 
