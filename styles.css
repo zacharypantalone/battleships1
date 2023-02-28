@@ -1,3 +1,9 @@
+#gamesboard-container {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .game-board {
   width: 200px;
   height: 200px;

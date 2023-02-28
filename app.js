@@ -36,5 +36,4 @@ function createBoard(color) {
 
 createBoard('yellow');
 createBoard('pink');
-
-flipButton.addEventListener('click', flip)
+flipButton.addEventListener('click', flip);
