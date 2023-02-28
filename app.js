@@ -3,7 +3,8 @@
 
 function flip() {
   const optionShips = Array.from(optionContainer.children)
-
+  optionShips.forEach(optionShip => optionShip.style.transform = `rotate(90deg)`)
 }
+
 
 flipButton.addEventListener('click', flip)
