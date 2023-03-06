@@ -67,7 +67,7 @@ const ships = [destroyer, submarine, cruiser, battleship, carrier];
 function addShipPiece(ship) {
   const allBoardBlocks = document.querySelectorAll('#computer div');
   let randomBoolean = Math.random() < 0.5;
-  let isHorizontal = true;
+  let isHorizontal = false;
   let randomStartIndex = Math.floor(Math.random() * width * width);
   console.log(randomStartIndex);
 
@@ -75,10 +75,14 @@ function addShipPiece(ship) {
 
   for (let i = 0; i < ship.length; i++) {
     if (isHorizontal) {
-      console.log(allBoardBlocks[Number(randomStartIndex) + i])
+      shipBlocks.push(allBoardBlocks[Number(randomStartIndex) + i])
 
+    } else {
+      shipBlocks.push(allBoardBlocks[Number(randomStartIndex) + i * width])
     }
   }
+
+  console.log(shipBlocks);
 
 
 };
