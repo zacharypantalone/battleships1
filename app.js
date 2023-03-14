@@ -69,7 +69,8 @@ function addShipPiece(ship) {
   let randomBoolean = Math.random() < 0.5;
   let isHorizontal = randomBoolean;
   let randomStartIndex = Math.floor(Math.random() * width * width);
-  console.log(randomStartIndex);
+  
+  let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length;
 
   let shipBlocks = [];
 
@@ -90,4 +91,4 @@ function addShipPiece(ship) {
 
 };
 
-addShipPiece(destroyer);
+ship.forEach(ship => addShipPiece(ship));
