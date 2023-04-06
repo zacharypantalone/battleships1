@@ -111,3 +111,9 @@ function addShipPiece(ship) {
 };
 
 ships.forEach(ship => addShipPiece(ship));
+
+
+// DRAG PLAYER SHIPS
+
+const optionShips = Array.from(optionContainer.children)
+optionShips.forEach(optionShip => optionShip.addEventListener('dragstart', dragStart))
