@@ -102,6 +102,8 @@ function addShipPiece(ship) {
         shipBlock.classList.add(ship.name);
         shipBlock.classList.add('taken');
       })
+    } else {
+      addShipPiece(ship);
     }
 
 
