@@ -110,7 +110,7 @@ function addShipPiece(user, ship, startId) {
 
 };
 
-ships.forEach(ship => addShipPiece(ship));
+ships.forEach(ship => addShipPiece('computer', ship));
 
 
 // DRAG PLAYER SHIPS
@@ -138,5 +138,5 @@ function dragOver(e) {
 function dropShip(e) {
   const startId = e.target.id;
   const ship = ships[draggedShip.id];
-  addShipPiece(ship, startId);
+  addShipPiece('player', ship, startId);
 }
