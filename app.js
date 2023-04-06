@@ -119,6 +119,22 @@ let draggedShip;
 const optionShips = Array.from(optionContainer.children)
 optionShips.forEach(optionShip => optionShip.addEventListener('dragstart', dragStart))
 
+const allPlayerBlocks = document.querySelectorAll('#player div');
+allPlayerBlocks.forEach(allPlayerBlock => {
+  allPlayerBlock.addEventListener('drag', dragOver);
+  allPlayerBlock.addEventListener('drop', dropShip);
+  
+
+})
+
 function dragStart(e) {
   console.log(e.target);  
+}
+
+function dragOver(e) {
+  e.preventDefault()
+}
+
+function dropShip(e) {
+  e.preventDefault()
 }
