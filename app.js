@@ -64,7 +64,7 @@ const carrier = new Ship('carrier', 5);
 
 const ships = [destroyer, submarine, cruiser, battleship, carrier];
 
-function addShipPiece(ship) {
+function addShipPiece(ship, startId) {
   const allBoardBlocks = document.querySelectorAll('#computer div');
   let randomBoolean = Math.random() < 0.5;
   let isHorizontal = randomBoolean;
