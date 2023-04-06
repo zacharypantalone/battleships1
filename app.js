@@ -137,5 +137,6 @@ function dragOver(e) {
 
 function dropShip(e) {
   const startId = e.target.id;
-  const ship = ships[draggedShip.id]
+  const ship = ships[draggedShip.id];
+  addShipPiece(ship, startId);
 }
