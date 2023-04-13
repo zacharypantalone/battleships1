@@ -72,7 +72,7 @@ function addShipPiece(user, ship, startId) {
 
   let startIndex = startId ? startId : randomStartIndex;
   
-  let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length ? randomStartIndex : width * width - ship.length : randomStartIndex <= width * width - width * ship.length ? randomStartIndex : randomStartIndex -ship.length * width + width;
+  let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex : width * width - ship.length : startIndex <= width * width - width * ship.length ? startIndex : startIndex -ship.length * width + width;
   let shipBlocks = [];
 
 
