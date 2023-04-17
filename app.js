@@ -63,6 +63,7 @@ const battleship = new Ship('battleship', 4);
 const carrier = new Ship('carrier', 5);
 
 const ships = [destroyer, submarine, cruiser, battleship, carrier];
+let notDropped;
 
 function addShipPiece(user, ship, startId) {
   const allBoardBlocks = document.querySelectorAll(`#${user} div`);
