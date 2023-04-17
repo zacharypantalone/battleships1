@@ -68,7 +68,7 @@ let notDropped;
 function addShipPiece(user, ship, startId) {
   const allBoardBlocks = document.querySelectorAll(`#${user} div`);
   let randomBoolean = Math.random() < 0.5;
-  let isHorizontal = user === 'player' ? angle === 0 :  randomBoolean;
+  let isHorizontal = user === 'player' ? angle === 0 : randomBoolean;
   let randomStartIndex = Math.floor(Math.random() * width * width);
 
   let startIndex = startId ? startId : randomStartIndex;
@@ -106,8 +106,8 @@ function addShipPiece(user, ship, startId) {
         shipBlock.classList.add('taken');
       })
     } else {
-      if (user === 'computer') addShipPiece(ship);
-      if (user === 'player') notDropped = true;
+      if (user === 'computer') addShipPiece(ship)
+      if (user === 'player') notDropped = true
     }
 
 
