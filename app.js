@@ -105,7 +105,8 @@ function addShipPiece(user, ship, startId) {
         shipBlock.classList.add('taken');
       })
     } else {
-      addShipPiece(ship);
+      if (user === 'computer') addShipPiece(ship);
+      if (user === 'player') notDropped = true;
     }
 
 
