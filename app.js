@@ -65,7 +65,7 @@ const carrier = new Ship('carrier', 5);
 const ships = [destroyer, submarine, cruiser, battleship, carrier];
 let notDropped;
 
-function handleValidity(allBoardBlocks, isHorizontal, startIndex, ship) {
+function getValidity(allBoardBlocks, isHorizontal, startIndex, ship) {
 
   let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex : width * width - ship.length : startIndex <= width * width - width * ship.length ? startIndex : startIndex -ship.length * width + width;
   let shipBlocks = [];
@@ -167,4 +167,13 @@ function dropShip(e) {
 function highlightArea(startIndex, ship) {
   const allBoardBlocks = document.querySelectorAll('#player div');
   let isHorizontal = angle === 0;
+
+  const { shipBlocks, valid, notTaken } = getValidity(allBoardBlocks, isHorizontal, startIndex, ship);
+
+  if (valid && notTaken) {
+    shipBlocks.forEach(shipBlock => {
+      shipBlock.classList.add('hover')
+      setTimeout(() => shipBlock.classList.add('hover'), 500)
+    })
+  }
 }
