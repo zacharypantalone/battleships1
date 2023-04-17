@@ -150,6 +150,8 @@ function dragStart(e) {
 
 function dragOver(e) {
   e.preventDefault()
+  const ship = ships[draggedShip.id];
+  highlightArea(e.target.id, ship)
 }
 
 function dropShip(e) {
