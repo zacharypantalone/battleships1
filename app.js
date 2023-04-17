@@ -132,6 +132,7 @@ allPlayerBlocks.forEach(allPlayerBlock => {
 })
 
 function dragStart(e) {
+  notDropped = false;
   console.log(e.target);  
 }
 
