@@ -91,7 +91,12 @@ function handleValidity(allBoardBlocks, isHorizontal, startIndex, ship) {
       ) 
     }
 
+    const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains('taken'));
+
+    return { shipBlocks, valid, notTaken}
 }
+
+
 
 function addShipPiece(user, ship, startId) {
   const allBoardBlocks = document.querySelectorAll(`#${user} div`);
@@ -100,10 +105,11 @@ function addShipPiece(user, ship, startId) {
   let randomStartIndex = Math.floor(Math.random() * width * width);
 
   let startIndex = startId ? startId : randomStartIndex;
+
+  const {shipBlocks, valid, notTaken} = getValidity(allBoardBlocks, isHorizontal, startIndex, ship);
   
   
 
-    const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains('taken'));
 
     if (valid && notTaken) {
 
