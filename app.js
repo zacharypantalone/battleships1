@@ -149,3 +149,10 @@ function dropShip(e) {
     draggedShip.remove();
   }
 }
+
+// ADD HIGHTLIGHT
+
+function highlightArea(startIndex, ship) {
+  const allBoardBlocks = document.querySelectorAll('#player div');
+  let isHorizontal = angle === 0;
+}
