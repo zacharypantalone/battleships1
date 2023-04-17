@@ -143,4 +143,8 @@ function dropShip(e) {
   const startId = e.target.id;
   const ship = ships[draggedShip.id];
   addShipPiece('player', ship, startId);
+
+  if (!notDropped) {
+    draggedShip.remove();
+  }
 }
