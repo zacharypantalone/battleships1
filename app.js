@@ -65,14 +65,8 @@ const carrier = new Ship('carrier', 5);
 const ships = [destroyer, submarine, cruiser, battleship, carrier];
 let notDropped;
 
-function addShipPiece(user, ship, startId) {
-  const allBoardBlocks = document.querySelectorAll(`#${user} div`);
-  let randomBoolean = Math.random() < 0.5;
-  let isHorizontal = user === 'player' ? angle === 0 : randomBoolean;
-  let randomStartIndex = Math.floor(Math.random() * width * width);
+function handleValidity(allBoardBlocks, isHorizontal, startIndex, ship) {
 
-  let startIndex = startId ? startId : randomStartIndex;
-  
   let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex : width * width - ship.length : startIndex <= width * width - width * ship.length ? startIndex : startIndex -ship.length * width + width;
   let shipBlocks = [];
 
@@ -96,6 +90,18 @@ function addShipPiece(user, ship, startId) {
         valid = shipBlocks[0].id < 90 + (width * index + 1)
       ) 
     }
+
+}
+
+function addShipPiece(user, ship, startId) {
+  const allBoardBlocks = document.querySelectorAll(`#${user} div`);
+  let randomBoolean = Math.random() < 0.5;
+  let isHorizontal = user === 'player' ? angle === 0 : randomBoolean;
+  let randomStartIndex = Math.floor(Math.random() * width * width);
+
+  let startIndex = startId ? startId : randomStartIndex;
+  
+  
 
     const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains('taken'));
 
