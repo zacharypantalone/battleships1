@@ -206,6 +206,10 @@ function handleClick(e) {
     if (e.target.classList.contains('taken')) {
       e.target.classList.add('boom');
       infoDisplay.textContent = "You have a hit!";
+      let classes = Array.from(e.target.classList);
+      classes = classes.filter(className => className !== 'block')
+      classes = classes.filter(className => className !== 'boom')
+      classes = classes.filter(className => className !== 'taken')
     }
   }
 }
