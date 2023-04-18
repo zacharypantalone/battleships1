@@ -223,7 +223,8 @@ function handleClick(e) {
       e.target.classList.add('empty');
     }
     playerTurn = false;
-    document.querySelectorAll('#computer div');
+    const allBoardBlocks = document.querySelectorAll('#computer div');
+    allBoardBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))
 
   }
 }
