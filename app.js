@@ -193,9 +193,16 @@ let playerTurn;
 function startGame() {
 
   if (optionContainer.children.length != 0) {
-    
+    infoDisplay.textContent = 'Place all your pieces first!'
+  } else  {
+    const allBoardBlocks = document.querySelectorAll('#computer div')
+    allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
   }
 
+}
+
+function handleClick(e) {
+  
 }
 
 startButton.addEventListener('click', startGame);
