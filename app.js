@@ -202,7 +202,12 @@ function startGame() {
 }
 
 function handleClick(e) {
-  
+  if  (!gameOver) {
+    if (e.target.classList.contains('taken')) {
+      e.target.classList.add('boom');
+      infoDisplay.textContent = "You have a hit!";
+    }
+  }
 }
 
 startButton.addEventListener('click', startGame);
