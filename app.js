@@ -179,3 +179,5 @@ function highlightArea(startIndex, ship) {
     })
   }
 }
+
+// GAME LOGIC
