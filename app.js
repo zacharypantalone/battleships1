@@ -2,6 +2,8 @@
  const optionContainer = document.querySelector('.option-container');
  const flipButton = document.querySelector('#flip-button');
  const startButton = document.querySelector('#start-button')
+ const infoDisplay = document.querySelector('#info');
+ const turnDisplay = document.querySelector('#turn-display');
  
 
 // OPTIONS
@@ -188,3 +190,12 @@ let playerTurn;
 
 // start game
 
+function startGame() {
+
+  if (optionContainer.children.length != 0) {
+    
+  }
+
+}
+
+startButton.addEventListener('click', startGame);
