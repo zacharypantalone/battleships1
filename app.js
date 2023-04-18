@@ -217,6 +217,14 @@ function handleClick(e) {
       //can delete below console.log when game is complete
       console.log('Player Hits')
     }
+
+    if (!e.target.classList.contain('taken')) {
+      infoDisplay.textContent = 'Nothing hit!';
+      e.target.classList.add('empty');
+    }
+    playerTurn = false;
+    document.querySelectorAll('#computer div');
+
   }
 }
 
