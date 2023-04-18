@@ -1,6 +1,7 @@
  const gamesBoardContainer = document.querySelector('#gamesboard-container');
  const optionContainer = document.querySelector('.option-container');
  const flipButton = document.querySelector('#flip-button');
+ const startButton = document.querySelector('#start-button')
  
 
 // OPTIONS
@@ -181,3 +182,9 @@ function highlightArea(startIndex, ship) {
 }
 
 // GAME LOGIC
+
+let gameOver = false;
+let playerTurn;
+
+// start game
+
