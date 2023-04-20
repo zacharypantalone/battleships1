@@ -272,7 +272,7 @@ function computerGo() {
       turnDisplay.textContent = 'Please go!';
       const allBoardBlocks = document.querySelectorAll('#computer div');
       allBoardBlocks.forEach(block => block.addEventListener('click', handleClick));
-    })
+    }, 6000)
 
 
   }
