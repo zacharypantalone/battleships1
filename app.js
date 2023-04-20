@@ -261,6 +261,7 @@ function computerGo() {
         classes = classes.filter(className => className !== 'boom');
         classes = classes.filter(className => className !== 'taken');
         computerHits.push(...classes);
+        checkScore('computer', computerHits, computerSunkShips);
       } else {
         infoDisplay.textContent = 'Nothing hit!';
         allBoardBlocks[randomGo].classList.add('empty');
