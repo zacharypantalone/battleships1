@@ -265,6 +265,16 @@ function computerGo() {
 
 
     }, 3000)
+    
+    setTimeout(() => {
+      playerTurn = true;
+      turnDisplay.textContent = 'Your turn!';
+      turnDisplay.textContent = 'Please go!';
+      const allBoardBlocks = document.querySelectorAll('#computer div');
+      allBoardBlocks.forEach(block => block.addEventListener('click', handleClick));
+    })
+
+
   }
 }
 
