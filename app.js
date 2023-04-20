@@ -205,6 +205,8 @@ startButton.addEventListener('click', startGame);
 
 let playerHits = [];
 let computerHits = [];
+const playerSunkShips = [];
+const computerSunkShips = [];
 
 function handleClick(e) {
   if  (!gameOver) {
@@ -216,6 +218,7 @@ function handleClick(e) {
         classes = classes.filter(className => className !== 'boom')
         classes = classes.filter(className => className !== 'taken')
         playerHits.push(...classes);
+        checkScore('player', playerHits, playerSunkShips);
       //can delete below console.log when game is complete
         console.log('Player Hits')
     }
