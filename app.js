@@ -298,5 +298,8 @@ function checkScore(user, userHits, userSunkShips) {
   checkShip('battleship', 4);
   checkShip('carrier', 5);
 
+  console.log('playerHits', playerHits);
+  console.log('playerSunkShips', playerSunkShips);
+
 }
 
