@@ -226,7 +226,7 @@ function handleClick(e) {
     }
     playerTurn = false;
     const allBoardBlocks = document.querySelectorAll('#computer div');
-    allBoardBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))
+    allBoardBlocks.forEach(block => block.replaceWith(block.cloneNode(true)));
     setTimeout(computerGo, 3000);
   }
 }
@@ -239,8 +239,8 @@ function computerGo() {
     infoDisplay.textContent = 'The computer is thinking about its next move...';
 
     setTimeout(() => {
-      let randomGo = Math.floor(Math.random() * width * width)
-      const allBoardBlocks = document.querySelectorAll('#player div')
+      let randomGo = Math.floor(Math.random() * width * width);
+      const allBoardBlocks = document.querySelectorAll('#player div');
 
       if (allBoardBlocks[randomGo].classList.contains('taken') &&
           allBoardBlocks[randomGo].classList.contains('boom')
@@ -251,17 +251,20 @@ function computerGo() {
         allBoardBlocks[randomGo].classList.contains('taken') &&
         !allBoardBlocks[randomGo].classList.contains('boom')
       ) {
-        allBoardBlocks[randomGo].classList.add('boom')
-        infoDisplay.textContent = 'The computer hit your ship!'
+        allBoardBlocks[randomGo].classList.add('boom');
+        infoDisplay.textContent = 'The computer hit your ship!';
         let classes = Array.from(e.target.classList);
-        classes = classes.filter(className => className !== 'block')
-        classes = classes.filter(className => className !== 'boom')
-        classes = classes.filter(className => className !== 'taken')
-        computerHits.push(...classes)
+        classes = classes.filter(className => className !== 'block');
+        classes = classes.filter(className => className !== 'boom');
+        classes = classes.filter(className => className !== 'taken');
+        computerHits.push(...classes);
+      } else {
+        infoDisplay.textContent = 'Nothing hit!';
+        allBoardBlocks[randomGo].classList.add('empty');
       }
 
 
-    })
+    }, 3000)
   }
 }
 
