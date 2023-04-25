@@ -140,7 +140,7 @@ optionShips.forEach(optionShip => optionShip.addEventListener('dragstart', dragS
 
 const allPlayerBlocks = document.querySelectorAll('#player div');
 allPlayerBlocks.forEach(allPlayerBlock => {
-  allPlayerBlock.addEventListener('drag', dragOver);
+  allPlayerBlock.addEventListener('dragover', dragOver);
   allPlayerBlock.addEventListener('drop', dropShip);
   
 
